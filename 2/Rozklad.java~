@@ -1,0 +1,34 @@
+
+//import java.util.List;
+//import java.util.Arrays;
+import java.util.ArrayList;
+
+public class Rozklad
+{
+    public static void main (String[] args)
+    {
+        long x;
+        if(args.length > 0)
+            for(int i = 0; i < args.length; i++)
+            {
+                x = new Long(args[i]);
+                System.out.println(formatujIloczyn(x, LiczbyPierwsze.naCzynnikiPierwsze(x)));
+                //System.out.println(LiczbyPierwsze.czyPierwsza(x));
+            }
+        else
+            System.err.println("Nale¿y podaæ argumenty wywo³ania programu " +
+                "bêd±ce liczbami ca³kowitymi (co najmniej jeden)");
+    }
+    
+    private static String formatujIloczyn(long x, ArrayList<Long> czynniki)
+    {
+        StringBuilder wyn = new StringBuilder((new Long(x)).toString());
+        wyn.append(" = ");
+        wyn.append(czynniki.get(0));
+        for(int i = 1; i < czynniki.size(); i++)
+        {
+            wyn.append("*" + czynniki.get(i));
+        }
+        return wyn.toString();
+    }
+}

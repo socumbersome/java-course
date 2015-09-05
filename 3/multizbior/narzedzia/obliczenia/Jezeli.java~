@@ -1,0 +1,41 @@
+
+package narzedzia.obliczenia;
+
+import narzedzia.strukt_danych.*;
+
+public class Jezeli extends Instrukcja
+{
+    private Wyrazenie wyr;
+    private Blok wewnatrz;
+    
+    public Jezeli(Wyrazenie wyr, Blok wewnatrz)
+    {
+        this.wyr = wyr;
+        this.wewnatrz = wewnatrz;
+    }
+    
+    public void wykonaj()
+    {
+        if(wyr.oblicz() == 0)
+            return;
+        wewnatrz.wykonaj();
+    }
+    
+    public String toString()
+    {
+        return "if " + wyr.toString() + "\n" + wewnatrz.toString() + /*"\n"*/;
+    }
+    
+    public boolean equals(Object obj)
+    {
+        if(this.getClass() != obj.getClass())
+            return false;
+        /* 2 konwencje: albo chodzi o równość wartości
+        całego wyrażenia, albo o identyczność stringów
+        reprezentujących dane wyrażenie.
+        Skłaniam się ku drugiemu, ponieważ od pierwszego
+        jest publiczna(!) metoda oblicz */
+        return this.toString() == ((Jezeli)obj).toString();
+    }
+}
+

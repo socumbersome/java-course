@@ -1,0 +1,8 @@
+
+package narzedzia.obliczenia;
+
+public abstract class Wyrazenie
+{
+    public abstract int oblicz();
+}
+

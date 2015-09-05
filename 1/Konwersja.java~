@@ -1,0 +1,65 @@
+
+public class Konwersja
+{
+    public static String konwertuj(int x)
+    {
+        String wyn = "";
+        if(x == 0)
+            return "zero";
+        if(x == Integer.MIN_VALUE)
+        {
+            return "minus dwa miliardy sto czterdzie¶ci siedem milionów" +
+                "czterysta osiemdziesi±t trzy tysi±ce sze¶æset czterdzie¶ci osiem";
+        }
+        if(x < 0)
+        {
+            wyn += "minus ";
+            x = -x;
+        }
+        
+        int i = 3;
+        while(i >= 0)
+        {
+            int mnozn = (int)Math.pow(1000, i);
+            if(x >= mnozn)
+            {
+                wyn += konw_trojkami(x / mnozn, i);
+                x = x - (x / mnozn) * mnozn;
+            }
+            i--;
+        }
+        
+        return wyn;
+    }
+    
+    private static String konw_trojkami(int x, int stopien)
+    {
+        String part = "";
+        int set, dzie, jedn;
+        set = x / 100; dzie = (x / 10) % 10; jedn = x % 10;
+
+        if(set >= 1)
+            part += Liczebniki.SETKI[set] + " ";
+
+        if(dzie == 1 && jedn == 0)
+            part += Liczebniki.DZIES[dzie] + " " + Liczebniki.odmiana[stopien][3] + " ";
+        else if(dzie == 1)
+            part += Liczebniki.JEDNO[10 + jedn] + " " + Liczebniki.odmiana[stopien][3] + " ";
+        else
+        {
+            if(dzie != 0)
+                part += Liczebniki.DZIES[dzie] + " ";
+ 
+            if(jedn != 0)
+                part += Liczebniki.JEDNO[jedn] + " ";
+
+            if(jedn == 1 && set == 0 && dzie == 0)
+                part += Liczebniki.odmiana[stopien][1] + " ";
+            else if(jedn == 2 || jedn == 3 || jedn == 4)
+                part += Liczebniki.odmiana[stopien][2] + " ";
+            else
+                part += Liczebniki.odmiana[stopien][3] + " ";
+        }
+        return part;
+    }
+}

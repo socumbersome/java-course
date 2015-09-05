@@ -1,0 +1,11 @@
+
+package narzedzia.obliczenia;
+
+import narzedzia.strukt_danych.*;
+
+public abstract class Wyrazenie
+{
+    public abstract int oblicz();
+
+}
+

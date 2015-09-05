@@ -1,0 +1,8 @@
+public class PolskieZnakiISO88592
+{
+    public static void main (String[] args)
+    {
+        System.out.println("Pozbądź się złudzeń i nie złość na próżno!");
+        System.out.println("POZBĄDŹ SIĘ ZŁUDZEŃ I NIE ZŁOŚĆ NA PRÓŻNO!");
+    }
+}

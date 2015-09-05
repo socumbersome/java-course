@@ -1,0 +1,13 @@
+public class A
+    {
+        A a;
+        int c;
+        public A()
+        {
+            c = 2;
+        }
+        public int daj(A fa)
+        {
+            return fa.c;
+        }
+    }

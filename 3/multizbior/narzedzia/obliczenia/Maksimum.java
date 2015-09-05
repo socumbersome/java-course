@@ -1,0 +1,37 @@
+
+package narzedzia.obliczenia;
+
+public class Maksimum extends Operator2Arg
+{   
+    public Maksimum(Wyrazenie a1, Wyrazenie a2)
+    {
+        super(a1, a2);
+    }
+    
+    public int oblicz()
+    {
+        int w1 = arg1.oblicz();
+        int w2 = arg2.oblicz();
+        if(w1 >= w2)
+            return w1;
+        return w2;
+    }
+    
+    public String toString()
+    {
+        return "max{" + arg1 + ", " + arg2 + "}";
+    }
+    
+    public boolean equals(Object obj)
+    {
+        if(this.getClass() != obj.getClass())
+            return false;
+        /* 2 konwencje: albo chodzi o równo¶æ warto¶ci
+        ca³ego wyra¿enia, albo o identyczno¶æ stringów
+        reprezentuj±cych dane wyra¿enie.
+        Sk³aniam siê ku drugiemu, poniewa¿ od pierwszego
+        jest publiczna(!) metoda oblicz */
+        return this.toString() == ((Maksimum)obj).toString();
+    }
+}
+

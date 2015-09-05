@@ -1,0 +1,10 @@
+
+
+public interface wezlowy
+{
+    public int get();
+    
+    public wezlowy(int a);
+    
+    
+}

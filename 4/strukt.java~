@@ -1,0 +1,11 @@
+
+
+public abstract class strukt
+{
+    public abstract class wezel{
+    public abstract int get();
+    }
+    wezel w;
+    public abstract void dodaj(int a);
+    public abstract wezel gett();
+}

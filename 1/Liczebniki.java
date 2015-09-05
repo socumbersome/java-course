@@ -1,0 +1,18 @@
+
+public class Liczebniki
+{
+    public static String[] JEDNO = {"", "jeden", "dwa", "trzy", "cztery",
+        "piêæ", "sze¶æ", "siedem", "osiem", "dziewiêæ", "dziesiêæ",
+        "jedena¶cie", "dwana¶cie", "trzyna¶cie", "czterna¶cie", "piêtna¶cie",
+        "szesna¶cie", "siedemna¶cie", "osiemna¶cie", "dziewiêtna¶cie"};
+    
+    public static String[] DZIES = {"", "dziesiêæ", "dwadzie¶cia", "trzydzie¶ci",
+        "czterdzie¶ci", "piêædziesi±t", "sze¶ædziesi±t", "siedemdziesi±t",
+        "osiemdziesi±t", "dziewiêædziesi±t"};
+        
+    public static String[] SETKI = {"", "sto", "dwie¶cie", "trzysta", "czterysta",
+        "piêæset", "sze¶æset", "siedemset", "osiemset", "dziewiêæset"};
+    
+    public static String[][] odmiana = { {"", "", "", ""}, {"", "tysi±c", "tysi±ce", "tysiêcy"},
+        {"", "milion", "miliony", "milionów"}, {"", "miliard", "miliardy", "miliardów"} };
+}

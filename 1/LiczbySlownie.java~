@@ -1,0 +1,17 @@
+
+public class LiczbySlownie
+{
+    public static void main (String[] args)
+    {
+        System.out.println("Pozb±d¼ siê z³udzeñ i nie z³o¶æ na pró¿no!");
+        System.out.println("POZB¡D¬ SIÊ Z£UDZEÑ I NIE Z£O¦Æ NA PRÓ¯NO!");
+        System.out.println(Liczebniki.JEDNO[6]);
+        
+        int x;
+        for(int i = 0; i < args.length; i++)
+        {
+            x = new Integer(args[i]);
+            System.out.println(Konwersja.konwertuj(x));
+        }
+    }
+}

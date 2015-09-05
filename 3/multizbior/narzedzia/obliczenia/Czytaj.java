@@ -1,0 +1,49 @@
+
+package narzedzia.obliczenia;
+
+import narzedzia.strukt_danych.*;
+import java.util.Scanner;
+
+public class Czytaj extends Instrukcja
+{
+    private String zm;
+    
+    public Czytaj(String zm)
+    {
+        this.zm = zm;
+    }
+    
+    public void wykonaj() throws RuntimeException
+    {
+        try
+        {
+            Program.srodowisko.szukaj(zm);
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException("Zmienna " + zm +
+                "nie jest w zasiegu aktualnego bloku");
+        }
+        Scanner s = new Scanner(System.in);
+        int input = s.nextInt();
+        Program.srodowisko.aktualizuj(zm, input);
+    }
+    
+    public String toString()
+    {
+        return "read " + zm + ";\n";
+    }
+    
+    public boolean equals(Object obj)
+    {
+        if(this.getClass() != obj.getClass())
+            return false;
+        /* 2 konwencje: albo chodzi o równość wartości
+        całego wyrażenia, albo o identyczność stringów
+        reprezentujących dane wyrażenie.
+        Skłaniam się ku drugiemu, ponieważ od pierwszego
+        jest publiczna(!) metoda oblicz */
+        return this.toString() == ((Czytaj)obj).toString();
+    }
+}
+

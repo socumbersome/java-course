@@ -1,0 +1,29 @@
+
+
+public class stos extends strukt
+{
+    public class wezel implements wezlowy
+    {
+        int w;
+        
+        public int get()
+        {
+            return w;
+        }
+        
+        public wezel(int a)
+        {
+            w = a;
+        }
+    }
+    wezel w;
+    public void dodaj(int a)
+    {
+        wezel x = new wezel(a);
+        w = x;
+    }
+    public wezel gett()
+    {
+        return w;
+    }
+}

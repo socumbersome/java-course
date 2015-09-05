@@ -1,0 +1,17 @@
+var x;
+var jas;
+write jas;
+{
+    var jas;
+    jas = 5;
+    write jas;
+    x = (2 * jas);
+    write x;
+}write jas;
+write x;
+
+0
+5
+10
+0
+10
